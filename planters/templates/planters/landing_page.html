@@ -3,9 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
+    <title>ParaPlanters</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'planters/landing_page.css' %}">
 </head>
 <body>
-    <h1>Hello starting my app.</h1>
+    <nav class="navbar">
+        <div class="navbar-container">
+          <a href="/" class="navbar-logo">
+            <img src="{% static 'planters/logo.webp' %}" alt="ParaPlanters Logo">
+          </a>
+          <ul class="navbar-menu">
+            <li><a href="#about">About</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#about-me">About Me</a></li>
+          </ul>
+          <div class="navbar-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+        </div>
+      </nav>
+      
+      <script src="{% static 'planters/landing_page.js' %}"></script>
 </body>
 </html>
