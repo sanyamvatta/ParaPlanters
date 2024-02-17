@@ -5,28 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ParaPlanters</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'planters/landing_page.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'planters/landing/landing_page.css' %}">
+    <link rel="shortcut icon" href="{% static 'planters/landing/logo.png' %}" type="image/png">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="navbar-container">
-          <a href="/" class="navbar-logo">
-            <img src="{% static 'planters/logo.webp' %}" alt="ParaPlanters Logo">
-          </a>
-          <ul class="navbar-menu">
-            <li><a href="#about">About</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#how-it-works">How It Works</a></li>
-            <li><a href="#about-me">About Me</a></li>
-          </ul>
-          <div class="navbar-toggle" id="mobile-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-          </div>
+    <!-- Navbar -->
+  <nav class="nav">
+    <div class="container">
+        <div class="logo">
+            <a href="#"><img class="logo-img" src="{% static 'planters/landing/logo.png' %}" alt=""></a>
         </div>
-      </nav>
-      
-      <script src="{% static 'planters/landing_page.js' %}"></script>
+        <div id="mainListDiv" class="main_list">
+            <ul class="navlinks">
+                <li><a href="#about-app">About</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#hiw">How it Works</a></li>
+                <li><a href="#about-me">About me</a></li>
+                <li class="login-item"><a class="login-btn" href="#">Login/Signup</a></li>
+            </ul>
+        </div>
+        <span class="navTrigger">
+            <i></i>
+            <i></i>
+            <i></i>
+        </span>
+    </div>
+  </nav>
+
+  <!-- About the app section -->
+  <section id="about-app">
+    <div class="heading">
+        <h1 class="heading-text">ParaPlanters</h1>
+    </div>
+    <div class="container-app">
+        <div class="about-image">
+            <img style="width: 50%;" src="{% static 'planters/landing/about-login.webp' %}" alt="Glorifying Image of App">
+        </div>
+        <div class="about-text">
+            <h2>About ParaPlanters</h2>
+            <p>
+                ParaPlanters is an innovative app designed to encourage and facilitate environmental sustainability through interactive and rewarding activities. Our mission is to inspire individuals to contribute positively to their environment, starting with simple yet impactful actions like planting trees. By integrating gamification elements, ParaPlanters makes environmental activism engaging and fun. Users can track their progress, earn rewards for their activities, and see the tangible impact of their contributions on their local and global environment. Join our community of eco-conscious users making a real difference today and help us create a greener, more sustainable future for generations to come.
+            </p>            
+        </div>
+    </div>
+  </section>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!-- Function used to shrink nav bar removing paddings and adding black background -->
+  <script>
+      $(window).scroll(function() {
+          if ($(document).scrollTop() > 50) {
+              $('.nav').addClass('affix');
+              console.log("OK");
+          } else {
+              $('.nav').removeClass('affix');
+          }
+      });
+  </script>    
+  <script src="{% static 'planters/landing/landing_page.js' %}"></script>
 </body>
 </html>
