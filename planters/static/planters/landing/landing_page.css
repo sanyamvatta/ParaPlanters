@@ -9,11 +9,29 @@ body {
     font-size: 10px;
 }
 
-body {
+
+body::before {
+    content: "";
+    position: fixed; /* Fixed position */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1; /* Place the pseudo-element behind the content */
+
+    display: block;
     background-image: url("background.webp");
-    background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center; /* Center the background image */
+}
+
+@media only screen and (min-device-width: 280px) and (max-device-width: 450px) and (min-device-height: 600px) and (max-device-height: 940px) and (orientation: portrait) {
+    body::before {
+        /* Override the background-image for mobile devices */
+        background-image: url('background-mobile.jpeg');
+        background-size: cover; /* Use cover instead of a percentage to fill the element */
+    }
 }
 /*-- Inspiration taken from abdo steif -->
 /* --> https://codepen.io/abdosteif/pen/bRoyMb?editors=1100*/
@@ -161,13 +179,6 @@ body {
     }
 }
 
-@media only screen and (min-device-width: 280px) and (max-device-width: 450px) and (min-device-height: 600px) and (max-device-height: 940px) and (orientation: portrait) {
-    body {
-        background-image: url('background-mobile.jpeg');
-        background-size: 150%;
-        background-repeat: no-repeat;
-    }
-}
 
 /* Animation */
 /* Inspiration taken from Dicson https://codemyui.com/simple-hamburger-menu-x-mark-animation/ */
@@ -421,7 +432,8 @@ body {
 #about-app {
     background-color: rgba(0, 150, 0, 0.7); /* Tint of green with an alpha value of 0.6 */
     color: white; /* Adjust based on your design preference */
-    padding: 145px 20px; /* Adjust padding as needed */
+    padding: 145px 20px;
+    padding-bottom: 20px; /* Adjust padding as needed */
 }
 
 /* Heading text */
@@ -479,24 +491,23 @@ body {
     }
   }
 
-.container-app {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-wrap: wrap; /* Ensures responsiveness */
+  .container-app {
+    text-align: center;
 }
 
 .about-image img {
-    max-width: 50%;
+    width: 30%; /* Use 100% of the .about-image container */
     border-radius: 10px; /* Optional: for styled image edges */
 }
 
 .about-text {
-    max-width: 600px; /* Adjust based on your design preference */
     margin: 20px;
+    margin-left: 100px;
+    margin-right: 100px;
     padding: 13px;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.4);
     border-radius: 10px;
+    min-height: 250px;
 }
 
 .about-text h2 {
@@ -505,9 +516,22 @@ body {
 }
 
 .about-text p {
-    font-size: 1.8rem; /* Adjust based on your design preference */
-    line-height: 1.8; /* Adjust for readability */
+    font-size: 1.9rem; /* Adjust based on your design preference */
+    line-height: 1.8;
+    font-weight: 500; /* Adjust for readability */
     color: #f5f5f5;
 }
 
+@media only screen and (max-width: 1024px) {
+    .about-text {
+        min-height: none;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .about-image img {
+        width: 65%;
+    }
+}
+
+/* Features Section */
 
