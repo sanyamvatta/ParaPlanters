@@ -535,3 +535,165 @@ body::before {
 
 /* Features Section */
 
+#features-section {
+    background-color: rgba(165, 42, 42, 0.8);
+    padding: 20px;
+    color: #ffffff;
+}
+
+.features-heading {
+    text-align: center;
+    padding: 20px 0; /* Adds vertical padding */
+    margin-bottom: 30px; /* Space between heading and the features */
+}
+
+.features-heading h2 {
+    position: relative;
+    font-size: 4rem;
+    color: #333; /* Ensures text is readable against the background */
+    background: rgba(248, 237, 215, 0.9); /* Vibrant background color for pop-out effect */
+    display: inline-block;
+    padding: 10px 30px; /* Padding around the text */
+    border-radius: 20px; /* Rounded corners for the background */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    opacity: 0; /* Start invisible for the fade-in effect */
+    transform: scale(0.95); /* Start slightly scaled down */
+    animation: fadeInScaleUp 1.5s ease-out forwards;
+}
+
+@keyframes fadeInScaleUp {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+}
+
+.features-heading h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px; /* Adjust as needed to visually connect with the heading */
+    left: 50%; /* Center the line relative to the heading */
+    transform: translateX(-50%); /* Adjust positioning to center the line */
+    width: 80%; /* Adjust the width as per your design preference */
+    height: 4px;
+    background: rgba(248, 237, 215, 0.8); /* A lighter, complementary color */
+    animation: widen 1.5s ease-in-out 0.5s both;
+}
+
+@keyframes widen {
+    from { width: 0; }
+    to { width: 80%; } /* Ensure this matches the width in the pseudo-element */
+}
+
+
+.features-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* Starts with single column for mobile */
+    gap: 60px; /* Space between grid items */
+    padding:20px;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+/* For larger screens, adjust the grid to accommodate the 1-2-2 layout */
+@media (min-width: 768px) { /* Adjust breakpoint as needed */
+    .features-container {
+        grid-template-rows: auto auto auto; /* Creates three rows */
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 1200px; /* Two columns for the 2-2 rows */
+        padding: 0 40px;
+    }
+
+    .features-container > .feature:first-child {
+        grid-column: 1 / -1; /* The first feature spans all columns */
+    }
+
+    .features-container > .feature img {
+        max-width: 100%; /* Adjusts width to fit the grid */
+        height: auto; /* Maintains aspect ratio */
+    }
+}
+
+
+.feature img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.feature h3 {
+    font-size: 3rem;
+    margin: 10px 0;
+}
+
+.feature p {
+    font-size: 2rem;
+}
+
+.cta-button {
+    text-align: center;
+    margin-top: 50px; /* Adjust spacing as needed */
+}
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.cta-link {
+    display: inline-block;
+    background-image: linear-gradient(to right, #FFC107, #FFA000); /* Vibrant, attention-grabbing color */
+    border: 2px solid transparent; 
+    color: #000; /* Contrast for readability */
+    font-size: 3.5rem; /* Larger font size for visibility */
+    padding: 15px 30px; /* Ample padding for a larger, clickable area */
+    border-radius: 25px; /* Rounded corners for a modern, friendly look */
+    text-transform: uppercase; /* MAKES IT STAND OUT */
+    font-weight: bold; /* Adds emphasis */
+    text-decoration: none; /* Removes underline */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    border: none; /* Removes default border */
+    cursor: pointer; /* Changes cursor to indicate clickability */
+    animation: fadeInSlideUp 0.8s ease-out forwards;
+}
+
+.cta-link:hover, .cta-link:focus {
+    border-color: #FFA000;
+    background-image: linear-gradient(to right, #FFC107, #FFA000); /* Darker shade on hover/focus for interaction feedback */
+    color: #FFF; /* Ensures text contrast against darker background */
+    transform: translateY(-5px) scale(1.05); /* Slight lift and enlarge effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Increased shadow for 'lifting' illusion */
+}
+
+/* Keyframes for a pulsing glow effect */
+@keyframes glow {
+    0%, 100% { box-shadow: 0 0 15px #FFC107; }
+    50% { box-shadow: 0 0 25px #FFA000; }
+}
+
+.cta-link:hover {
+    animation: glow 1s infinite alternate; /* Applies the glow effect on hover */
+}
+
+.major-feature-text {
+    font-weight: 600;
+}
+
+.major-feature-heading {
+    size: 3.2rem;
+    font-weight: 700;
+}
+
+.major-feature-image{
+    width: 30%;
+}
