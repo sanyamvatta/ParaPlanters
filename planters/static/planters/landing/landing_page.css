@@ -538,6 +538,7 @@ body::before {
 #features-section {
     background-color: rgba(165, 42, 42, 0.8);
     padding: 20px;
+    padding-bottom: 80px;
     color: #ffffff;
 }
 
@@ -696,4 +697,82 @@ body::before {
 
 .major-feature-image{
     width: 30%;
+}
+
+/* How-it-works section */
+
+#how-it-works {
+    background-color: rgba(139, 69, 19, 0.8); /* A darker shade of brown */
+    color: #FFFFFF; /* Keep text color for readability */
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.section-heading {
+    text-align: center;
+    padding: 20px 0; /* Vertical padding */
+    margin-bottom: 30px; /* Space between heading and the content */
+}
+
+.section-heading h2 {
+    position: relative;
+    font-size: 4rem; /* Larger font size for emphasis */
+    color: #333; /* Dark text for readability */
+    background: rgba(188, 143, 143, 0.9); /* Adjusted to fit the darker brown theme */
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: scale(0.95);
+    animation: fadeInScaleUp 1.5s ease-out forwards;
+}
+
+.section-heading h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 4px;
+    background: rgba(188, 143, 143, 0.8); /* Lighter, complementary color for the underline */
+    animation: widen 1.5s ease-in-out 0.5s both;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.step {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.step:hover {
+    transform: translateY(-10px);
+}
+
+.icon img {
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+.step h3 {
+    font-size: 3rem;
+}
+
+.step p {
+    font-size: 2.5rem;
+}
+
+@media only screen and (max-width: 768) {
+    .icon img {
+        width: 90px;
+    }
 }
