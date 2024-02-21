@@ -776,3 +776,120 @@ body::before {
         width: 90px;
     }
 }
+
+/* CTA section */
+
+#cta-section {
+    background-color: rgba(121, 85, 72, 0.8); /* A complementary earthy tone */
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px; /* Adjust based on your content */
+}
+
+.cta-content {
+    max-width: 600px;
+}
+.heading-container, .button-container {
+    text-align: center;
+    /* Ensure both containers take the full width */
+    width: 100%;
+    display: block; /* Makes each container take up its own line */
+}
+#cta-section .major-cta-heading {
+    position: relative;
+    font-size: 3rem; /* Increased size for impact */
+    color: #FFFFFF; /* Bright color for the text to pop out */
+    background-color: rgba(103, 255, 240, 0.6); /* Contrasting background color */
+    display: inline-block;
+    padding: 15px 40px;
+    margin: 0 auto;
+    border-radius: 25px; /* Soften the edges */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Add depth */
+    overflow: hidden; /* Ensure pseudo-element doesn't exceed the bounds */
+}
+
+
+
+/* Infinite animation for the heading */
+@keyframes Headpulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.major-cta-heading {
+    animation: Headpulse 3s infinite ease-in-out !important;
+}
+
+/* Adding a decorative pseudo-element with its own animation */
+.major-cta-heading::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2); /* Subtle overlay for depth */
+    z-index: -1;
+    animation: move 3s forwards; /* Runs only once */
+}
+
+@keyframes move {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); /* End at initial position */ }
+}
+
+
+.major-cta-button {
+    font-size: 4rem; /* Larger font size for emphasis */
+    font-weight: bold; /* Make the text bold */
+    color: #5D4037; /* Initial text color */
+    background-color: #8BC34A; /* Vibrant background color for standout appearance */
+    padding: 15px 40px; /* Ample padding for a larger touch area */
+    border: 2px solid transparent; /* Subtle border, becomes visible on hover */
+    border-radius: 30px; /* Rounded corners for a modern look */
+    cursor: pointer; /* Cursor indicates button */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    margin-top: 70px;
+    text-transform: uppercase; /* Capitalize text for emphasis */
+    letter-spacing: 1px; /* Increased letter spacing for readability */
+}
+
+.major-cta-button:hover {
+    color: #8BC34A; /* Background color becomes text color */
+    background-color: #5D4037; /* Text color becomes background color */
+    border-color: #8BC34A; /* Border color matches the initial background */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Slightly larger shadow for lifted effect */
+    transform: scale(1.05);
+}
+
+
+.major-cta-button:active {
+    transform: scale(0.95);
+}
+
+.animate {
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Button animation */
+
+.button-pulse {
+    animation: pulse 2s infinite 3s cubic-bezier(0.25, 0, 0, 1);
+    box-shadow: 0 0 0 0 white;
+}
+  @keyframes pulse {
+    to {
+      box-shadow: 0 0 0 18px rgba(255, 255, 255, 0); 
+    }
+  }
