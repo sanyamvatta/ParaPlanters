@@ -8,7 +8,9 @@ body {
     font-size: 62.5%;
     font-size: 10px;
 }
-
+::-webkit-scrollbar {
+    display: none; /* Hide scrollbars */
+}
 
 body::before {
     content: "";
@@ -512,11 +514,11 @@ body::before {
 
 .about-text h2 {
     color: #f5f5f5;/* Adjust based on your design preference */
-    font-size: 2.5rem;
+    font-size: 3.5rem;
 }
 
 .about-text p {
-    font-size: 1.9rem; /* Adjust based on your design preference */
+    font-size: 2.5rem; /* Adjust based on your design preference */
     line-height: 1.8;
     font-weight: 500; /* Adjust for readability */
     color: #f5f5f5;
@@ -893,3 +895,40 @@ body::before {
       box-shadow: 0 0 0 18px rgba(255, 255, 255, 0); 
     }
   }
+
+  /* About me section styling */
+  #about-me {
+    background-color: rgba(139, 105, 85, 0.8); /* Transitioning smoothly from the previous section */
+    color: #fff;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+
+#about-me h2 {
+    background-color: rgba(169, 135, 115, 0.9); /* Lighter contrast background */
+    color: #3E2723; /* Darker font color for readability */
+    font-size: 4rem;
+    margin-bottom: 30px;
+    padding: 15px 30px;
+    border-radius: 20px; /* Adds a subtle rounded corner */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    display: inline-block; /* Keeps background tight around text */
+    margin-top: 10px;
+}
+
+#about-me img {
+    display: block;
+    margin: 20px auto;
+    width: 150px; /* Adjust size as needed */
+    height: auto;
+    border-radius: 50%; /* Circular photo */
+    margin-bottom: 20px;
+}
+
+#about-me p {
+    font-size: 2.8rem;
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.6;
+}

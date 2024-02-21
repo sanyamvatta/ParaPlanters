@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'planters/landing/landing_page.css' %}">
     <link rel="shortcut icon" href="{% static 'planters/landing/logo.png' %}" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <!-- Navbar -->
@@ -130,6 +131,15 @@
     </div>
 </section>
 
+<!-- About me section -->
+<section id="about-me">
+    <h2 data-aos="slide-up">Meet the Developer</h2>
+    <img src="{% static 'planters/landing/me.jpeg' %}" alt="Developer Photo" data-aos="slide-up">
+    <p data-aos="slide-up">I am a 17-year-old boy from India, deeply concerned about our environment. Witnessing deforestation for trivial reasons propelled me to act. Having planted over 150 trees, I aspire to inspire others towards an eco-friendly mindset through this app. My dream is for every user to contribute to reforestation, aiming for a significant impact. Besides, I'm passionate about developing apps that serve society, with many more projects on the horizon. Stay tuned!</p>
+</section>
+
+
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
 <!-- Function used to shrink nav bar removing paddings and adding black background -->
@@ -143,6 +153,7 @@
           }
       });
   </script>    
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
   <script src="{% static 'planters/landing/landing_page.js' %}"></script>
 </body>
 </html>
