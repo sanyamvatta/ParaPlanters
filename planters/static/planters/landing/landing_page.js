@@ -6,11 +6,22 @@ $('.navTrigger').click(function () {
 
 });
 
-AOS.init({
-  duration: 800, // values from 0 to 3000, with step 50ms
-  easing: 'ease-in-out', // default easing for AOS animations
-  once: true, // whether animation should happen only once - while scrolling down
-  mirror: false, // whether elements should animate out while scrolling past them
+document.addEventListener("DOMContentLoaded", function() {
+  // Check if the window width is greater than 992px (common breakpoint for desktop)
+  if(window.innerWidth > 992) {
+    AOS.init({
+      duration: 800, // values from 0 to 3000, with step 50ms
+      easing: 'ease-in-out', // default easing for AOS animations
+      once: true, // whether animation should happen only once - while scrolling down
+      mirror: false, // whether elements should animate out while scrolling past them
+    });
+  } else {
+    // Remove AOS attributes on mobile
+    var aosElements = document.querySelectorAll('[data-aos]');
+    aosElements.forEach(function(el) {
+        el.removeAttribute('data-aos');
+    });
+  }
 });
 
 document.addEventListener("DOMContentLoaded", function() {
